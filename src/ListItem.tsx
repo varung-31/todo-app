@@ -5,7 +5,7 @@ class ListItem extends React.Component<ListItemTask, ListItemState> {
         super(props);
         this.state = {
             text: this.props.text,
-            isComplete: false,
+            isComplete: this.props.isComplete !== undefined ? this.props.isComplete : false,
             isInEditableMode: false
         };
     }

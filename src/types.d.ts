@@ -1,5 +1,6 @@
 interface ListItemTask {
-    text: string
+    text: string,
+    isComplete? : boolean
 }
 
 interface ListItemState {

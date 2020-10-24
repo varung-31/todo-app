@@ -4,10 +4,10 @@ import CompleteTaskList from "./CompleteTaskList";
 
 function App() {
   return (
-      <div id="main-container">
+      <>
         <TodoTaskList />
         <CompleteTaskList />
-      </div>
+      </>
   );
 }
 
