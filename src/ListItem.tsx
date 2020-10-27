@@ -1,4 +1,5 @@
 import React from "react";
+import "./ListItem.css";
 
 class ListItem extends React.Component<ListItemTask, ListItemState> {
     constructor(props: ListItemTask) {
@@ -54,7 +55,7 @@ class ListItem extends React.Component<ListItemTask, ListItemState> {
     }
 
     deleteTask(event: React.MouseEvent) {
-        let parentListTag = event.currentTarget.parentElement;
+        let parentListTag = event.currentTarget.parentElement?.parentElement;
         let parentUnorderedListTag = parentListTag?.parentElement;
         if (parentListTag != null) {
             parentUnorderedListTag?.removeChild(parentListTag);
@@ -67,9 +68,11 @@ class ListItem extends React.Component<ListItemTask, ListItemState> {
                 <input type="checkbox" checked={this.state.isComplete}
                        onClick={(event) => this.toggleTaskStatus(event)}/>
                 {this.renderChildBasedOnEditable(this.state.text)}
-                <button className="edit-button" onClick={() => this.editTask()}>Edit</button>
-                <button className="delete-button"
-                        onClick={(event) => this.deleteTask(event)}>Remove</button>
+                <div className="button-group">
+                    <button className="edit-button" onClick={() => this.editTask()}>Edit</button>
+                    <button className="delete-button"
+                            onClick={(event) => this.deleteTask(event)}>Remove</button>
+                </div>
             </li>
         );
     }

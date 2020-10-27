@@ -1,0 +1,9 @@
+#root {
+    display: block;
+    width: 30%;
+    height: fit-content;
+    padding: 1%;
+
+    /* Automatically adjusts horizontal margins to split the unused space equally -> center align */
+    margin: auto;
+}

@@ -1,0 +1,64 @@
+input[type=checkbox] {
+    margin-right: 5%;
+    width: 1vw;
+    height: 1vw;
+}
+
+input[type=text] {
+    color: dimgray;
+    border-color: lightgray;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 4px;
+    padding: 1%;
+    width: 40%;
+    font-size: 1.1vw;
+}
+
+label {
+    font-size: 1.2vw;
+    height: fit-content;
+}
+
+input[type=text]:focus {
+    color: black;
+    outline-color: lightgray;
+}
+
+button {
+    background: none;
+    border: none;
+    display: block;    /* Make the buttons appear below each other */
+    color: dimgray;
+    text-align: center;
+    margin: 0.75vw auto;   /* Top and bottom margins are 20%, right and left are on auto */
+    font-size: 1vw;
+    padding-bottom: 0;
+}
+
+button:hover {
+    cursor: pointer;
+    font-weight: bold;
+}
+
+button:focus {
+    outline: none;  /* The focus action is used to set style when the button is clicked */
+}
+
+.edit-button:hover {
+    color: darkgreen;
+}
+
+.delete-button:hover {
+    color: darkred;
+}
+
+.button-group {
+    float: right;
+    margin-right: 10%;
+}
+
+li {
+    line-height: 5vw;
+    border-bottom: 1px solid lightgray;
+}
