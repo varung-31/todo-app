@@ -4,12 +4,12 @@ import CompleteTaskList from "./CompleteTaskList";
 import "./App.css"
 
 function App() {
-  return (
-      <>
-        <TodoTaskList />
-        <CompleteTaskList />
-      </>
-  );
+    return (
+        <>
+            <TodoTaskList />
+            <CompleteTaskList />
+        </>
+    );
 }
 
 export default App;
