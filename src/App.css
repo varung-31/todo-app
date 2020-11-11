@@ -22,3 +22,31 @@ h3 {
 #incomplete-tasks {
     margin-bottom: 4vw;
 }
+
+h1 {
+    text-align: center;
+    margin-bottom: 10%;
+    font-size: 3vw;
+}
+
+.add-button {
+    float: right;
+    margin-right: 13%;
+    margin-top: 6%;
+    margin-bottom: 6%;
+}
+
+.add-button:hover {
+    color: lightseagreen;
+}
+
+/* input tag inside the add-task div */
+#add-task > input {
+    width: 20vw;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+#add-task > input:focus {
+    outline-color: lightblue;
+}

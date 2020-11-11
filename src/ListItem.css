@@ -22,7 +22,7 @@ label {
 
 input[type=text]:focus {
     color: black;
-    outline-color: lightgray;
+    outline-color: lightblue;
 }
 
 button {
@@ -31,7 +31,7 @@ button {
     display: block;    /* Make the buttons appear below each other */
     color: dimgray;
     text-align: center;
-    margin: 0.75vw auto;   /* Top and bottom margins are 20%, right and left are on auto */
+    margin: 0.75vw auto;   /* Top and bottom margins are 0.75vw, right and left are on auto */
     font-size: 1vw;
     padding-bottom: 0;
 }

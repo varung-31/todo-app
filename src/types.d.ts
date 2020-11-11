@@ -8,3 +8,11 @@ interface ListItemState {
     isComplete: boolean,
     isInEditableMode: boolean
 }
+
+interface AddTaskState {
+    text: string
+}
+
+interface AddTaskProps {
+
+}
