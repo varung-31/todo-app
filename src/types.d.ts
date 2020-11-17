@@ -5,6 +5,7 @@ interface ListItemTask {
 
 interface ListItemState {
     text: string,
+    interimText: string,
     isComplete: boolean,
     isInEditableMode: boolean
 }

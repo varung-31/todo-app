@@ -25,10 +25,18 @@ input[type=text]:focus {
     outline-color: lightblue;
 }
 
+button[class=edit-button], button[class=delete-button] {
+    display: block;    /* Make the buttons appear below each other */
+}
+
+.save-cancel-div {
+    display: flex;
+    margin-bottom: -0.75vw;
+}
+
 button {
     background: none;
     border: none;
-    display: block;    /* Make the buttons appear below each other */
     color: dimgray;
     text-align: center;
     margin: 0.75vw auto;   /* Top and bottom margins are 0.75vw, right and left are on auto */
@@ -38,7 +46,6 @@ button {
 
 button:hover {
     cursor: pointer;
-    font-weight: bold;
 }
 
 button:focus {
@@ -49,6 +56,14 @@ button:focus {
     color: darkgreen;
 }
 
+.save-button:hover {
+    color: blueviolet;
+}
+
+.cancel-button:hover {
+    color: darkorange;
+}
+
 .delete-button:hover {
     color: darkred;
 }
@@ -56,6 +71,11 @@ button:focus {
 .button-group {
     float: right;
     margin-right: 10%;
+}
+
+.button-group-expand {
+    float: right;
+    margin-right: 6%;
 }
 
 li {

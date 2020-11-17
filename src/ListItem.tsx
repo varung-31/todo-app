@@ -6,6 +6,7 @@ class ListItem extends React.Component<ListItemTask, ListItemState> {
         super(props);
         this.state = {
             text: this.props.text,
+            interimText: this.props.text,
             isComplete: this.props.isComplete !== undefined ? this.props.isComplete : false,
             isInEditableMode: false
         };
@@ -13,8 +14,8 @@ class ListItem extends React.Component<ListItemTask, ListItemState> {
 
     renderChildBasedOnEditable(text: string) {
         if (this.state.isInEditableMode) {
-            return <input type="text" defaultValue={text} onChange={event => {
-                this.setState({text: event.target.value});
+            return <input type="text" value={text} onChange={event => {
+                this.setState({interimText: event.target.value});
             }} />
         }
         return <label>{text}</label>;
@@ -50,7 +51,7 @@ class ListItem extends React.Component<ListItemTask, ListItemState> {
         this.setState({isComplete: !this.state.isComplete});
     }
 
-    editTask() {
+    toggleEditableStatus() {
         this.setState({isInEditableMode: !this.state.isInEditableMode});
     }
 
@@ -62,14 +63,39 @@ class ListItem extends React.Component<ListItemTask, ListItemState> {
         }
     }
 
+    saveChanges() {
+        this.setState({text: this.state.interimText});
+        this.toggleEditableStatus();
+    }
+
+    discardChanges() {
+        this.setState({interimText: this.state.text});
+        this.toggleEditableStatus();
+    }
+
+    renderButtonsBasedOnEditable() {
+        // render an edit button if in normal state
+        if (!this.state.isInEditableMode) {
+            return <button className="edit-button" onClick={() => this.toggleEditableStatus()}>Edit</button>;
+        }
+
+        // render save and cancel buttons when in editable state
+        return (
+                <div className="save-cancel-div">
+                    <button className="save-button" onClick={() => this.saveChanges()}>Save</button>
+                    <button className="cancel-button" onClick={() => this.discardChanges()}>Cancel</button>
+                </div>
+        );
+    }
+
     render() {
         return (
             <li>
                 <input type="checkbox" checked={this.state.isComplete}
                        onClick={(event) => this.toggleTaskStatus(event)}/>
-                {this.renderChildBasedOnEditable(this.state.text)}
-                <div className="button-group">
-                    <button className="edit-button" onClick={() => this.editTask()}>Edit</button>
+                {this.renderChildBasedOnEditable(this.state.interimText)}
+                <div className={this.state.isInEditableMode ? "button-group-expand" : "button-group"}>
+                    {this.renderButtonsBasedOnEditable()}
                     <button className="delete-button"
                             onClick={(event) => this.deleteTask(event)}>Remove</button>
                 </div>
